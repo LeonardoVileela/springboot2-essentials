@@ -1,7 +1,6 @@
 package academy.devdojo.springboot2.domain;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
+@NoArgsConstructor //cria um construtor sem argumentos
+@Builder
 public class Anime {
 
     @Id
@@ -18,9 +19,4 @@ public class Anime {
     private Long id;
 
     private String name;
-
-    public Anime(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }
